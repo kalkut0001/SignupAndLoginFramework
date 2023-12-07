@@ -20,22 +20,22 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/User/{id}")
+    @GetMapping("/user/{id}")
     public User getUser(@PathVariable("id") int id) {
         return userService.getUserById(id);
     }
 
-    @DeleteMapping("/User/{id}")
+    @DeleteMapping("/user/{id}")
     public void deleteUser(@PathVariable("id") int id) {
         userService.deleteUserById(id);
     }
 
-    @PostMapping("/User")
+    @PostMapping("/add-user")
     public void addUser(@RequestBody User User) {
         userService.saveOrUpdate(User);
     }
 
-    @PutMapping("/User")
+    @PutMapping("/update-user")
     public void updateUser(@RequestBody User User) {
         userService.saveOrUpdate(User);
     }
